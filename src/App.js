@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ThemeProvider } from './contexts/ThemeContext';
+import { siteConfig } from './data/portfolioData';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -9,6 +10,10 @@ import Experience from './components/Experience';
 import Certificates from './components/Certificates';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+
+// Conditionally import Projects if enabled
+// const Projects = siteConfig.features.showProjects ? 
+//   React.lazy(() => import('./components/Projects')) : null;
 
 function App() {
   return (
@@ -26,6 +31,14 @@ function App() {
             <Skills />
             <Experience />
             <Certificates />
+            
+            {/* Conditionally render Projects section */}
+            {siteConfig.features.showProjects && Projects && (
+              <React.Suspense fallback={<div>Loading...</div>}>
+                <Projects />
+              </React.Suspense>
+            )}
+            
             <Contact />
             <Footer />
           </motion.div>

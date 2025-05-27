@@ -4,6 +4,7 @@ import { Moon, Sun, Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
 import { Switch } from './ui/switch';
 import { useTheme } from '../contexts/ThemeContext';
+import { personalInfo, siteConfig } from '../data/portfolioData';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,15 +27,6 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'certificates', label: 'Certificates' },
-    { id: 'contact', label: 'Contact' },
-  ];
-
   return (
     <motion.header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -54,12 +46,12 @@ const Header = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            Kirusanth
+            {personalInfo.name}
           </motion.div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
+            {siteConfig.navigation.map((item) => (
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
@@ -110,7 +102,7 @@ const Header = () => {
               transition={{ duration: 0.3 }}
             >
               <div className="flex flex-col space-y-2">
-                {navItems.map((item) => (
+                {siteConfig.navigation.map((item) => (
                   <motion.button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}

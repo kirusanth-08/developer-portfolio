@@ -1,49 +1,61 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Download, MessageCircle, Github, Linkedin, Mail } from 'lucide-react';
+import { Download, MessageCircle, Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
 import { Button } from './ui/button';
+import { personalInfo, siteConfig } from '../data/portfolioData';
 
 const Hero = () => {
   const downloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/resume.pdf';
-    link.download = 'Kirusanth_Resume.pdf';
+    link.href = personalInfo.resumePath;
+    link.download = personalInfo.resumeFileName;
     link.click();
   };
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/kirusanth-08', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/kirusanth', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:kirusanth@example.com', label: 'Email' },
+    { icon: Github, href: personalInfo.social.github, label: 'GitHub' },
+    { icon: Linkedin, href: personalInfo.social.linkedin, label: 'LinkedIn' },
+    { icon: Mail, href: `mailto:${personalInfo.email}`, label: 'Email' },
   ];
+
+  // Add optional social links if they exist
+  if (personalInfo.social.twitter) {
+    socialLinks.push({ 
+      icon: ExternalLink, 
+      href: personalInfo.social.twitter, 
+      label: 'Twitter' 
+    });
+  }
 
   return (
     <section id="home" className="min-h-screen flex items-center gradient-bg relative overflow-hidden">
       {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-gradient-to-r from-purple-400/20 to-blue-400/20"
-            style={{
-              width: Math.random() * 400 + 100,
-              height: Math.random() * 400 + 100,
-              left: Math.random() * 100 + '%',
-              top: Math.random() * 100 + '%',
-            }}
-            animate={{
-              x: [0, Math.random() * 100 - 50],
-              y: [0, Math.random() * 100 - 50],
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: Math.random() * 10 + 10,
-              repeat: Infinity,
-              repeatType: 'reverse',
-            }}
-          />
-        ))}
-      </div>
+      {siteConfig.features.enableAnimations && (
+        <div className="absolute inset-0 overflow-hidden">
+          {[...Array(6)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute rounded-full bg-gradient-to-r from-purple-400/20 to-blue-400/20"
+              style={{
+                width: Math.random() * 400 + 100,
+                height: Math.random() * 400 + 100,
+                left: Math.random() * 100 + '%',
+                top: Math.random() * 100 + '%',
+              }}
+              animate={{
+                x: [0, Math.random() * 100 - 50],
+                y: [0, Math.random() * 100 - 50],
+                scale: [1, 1.1, 1],
+              }}
+              transition={{
+                duration: Math.random() * 10 + 10,
+                repeat: Infinity,
+                repeatType: 'reverse',
+              }}
+            />
+          ))}
+        </div>
+      )}
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -61,7 +73,7 @@ const Hero = () => {
             >
               Hi, I'm{' '}
               <span className="gradient-text floating-animation">
-                Kirusanth
+                {personalInfo.name}
               </span>
             </motion.h1>
 
@@ -71,7 +83,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              Full Stack Developer & Technology Enthusiast
+              {personalInfo.title}
             </motion.p>
 
             <motion.p
@@ -80,8 +92,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              Passionate about creating innovative solutions and bringing ideas to life through code.
-              I specialize in modern web technologies and love solving complex problems.
+              {personalInfo.description}
             </motion.p>
 
             {/* Action Buttons */}

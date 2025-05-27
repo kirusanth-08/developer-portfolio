@@ -1,8 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
 @tailwind base;
@@ -87,6 +83,28 @@
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
   }
+
+  /* Profile image specific styles */
+  .profile-glow {
+    box-shadow: 
+      0 0 60px rgba(147, 51, 234, 0.3),
+      0 0 120px rgba(59, 130, 246, 0.2);
+  }
+
+  .profile-border-animation {
+    background: linear-gradient(45deg, #9333ea, #3b82f6, #8b5cf6, #06b6d4);
+    background-size: 400% 400%;
+    animation: gradient-shift 4s ease infinite;
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
 }
 
 html {
@@ -108,4 +126,22 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-purple-600;
+}
+
+/* Responsive adjustments for hero section */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .hero-image {
+    order: -1;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Ensure proper aspect ratio for profile images */
+.profile-image-container {
+  aspect-ratio: 1;
 }

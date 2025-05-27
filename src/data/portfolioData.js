@@ -9,6 +9,14 @@ export const personalInfo = {
   email: "kirusanth@example.com",
   phone: "+1 (555) 123-4567",
   
+  // Profile Image Configuration
+  profileImage: {
+    enabled: true, // Set to false to hide profile image
+    src: "/profile1.jpg", // Path to your profile image
+    alt: "Kirusanth Profile Picture",
+    fallbackText: "K", // Fallback letter if image fails to load
+  },
+  
   // Social Media Links
   social: {
     github: "https://github.com/kirusanth-08",

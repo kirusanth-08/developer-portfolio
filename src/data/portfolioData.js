@@ -20,7 +20,7 @@ export const personalInfo = {
   // Social Media Links
   social: {
     github: "https://github.com/kirusanth-08",
-    linkedin: "https://linkedin.com/in/kirusanth",
+    linkedin: "https://linkedin.com/in/kirusanth-s",
     twitter: "https://twitter.com/kirusanth", // Optional
     portfolio: "https://kirusanth.dev", // Optional
   },

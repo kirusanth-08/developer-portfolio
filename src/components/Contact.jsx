@@ -4,7 +4,9 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Button } from './ui/button';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, CheckCircle, AlertCircle } from 'lucide-react';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../config/firebase';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +16,7 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', or null
 
   const handleChange = (e) => {
     setFormData({
@@ -25,13 +28,33 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus(null);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      // Add document to Firestore
+      const docRef = await addDoc(collection(db, 'contact-submissions'), {
+        ...formData,
+        timestamp: serverTimestamp(),
+        userAgent: navigator.userAgent,
+        referrer: document.referrer || 'Direct',
+        status: 'unread'
+      });
+
+      console.log('Document written with ID: ', docRef.id);
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      
+      // Auto-hide success message after 5 seconds
+      setTimeout(() => setSubmitStatus(null), 5000);
+      
+    } catch (error) {
+      console.error('Error adding document: ', error);
+      setSubmitStatus('error');
+      
+      // Auto-hide error message after 5 seconds
+      setTimeout(() => setSubmitStatus(null), 5000);
+    }
     
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I\'ll get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
     setIsSubmitting(false);
   };
 
@@ -185,6 +208,29 @@ const Contact = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
+                  {/* Status Messages */}
+                  {submitStatus === 'success' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="mb-6 p-4 bg-green-100 dark:bg-green-900/30 border border-green-400 text-green-700 dark:text-green-300 rounded-lg flex items-center gap-2"
+                    >
+                      <CheckCircle className="h-5 w-5" />
+                      <span>Thank you! Your message has been sent successfully.</span>
+                    </motion.div>
+                  )}
+
+                  {submitStatus === 'error' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="mb-6 p-4 bg-red-100 dark:bg-red-900/30 border border-red-400 text-red-700 dark:text-red-300 rounded-lg flex items-center gap-2"
+                    >
+                      <AlertCircle className="h-5 w-5" />
+                      <span>Sorry, there was an error sending your message. Please try again.</span>
+                    </motion.div>
+                  )}
+
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">

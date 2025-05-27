@@ -3,13 +3,13 @@ import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID,
-  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+  apiKey: "AIzaSyD-sLXXmVizgz2Ly9gnMaJfu3XXfAjIcQc",
+  authDomain: "developer-portfolio-2daab.firebaseapp.com",
+  projectId: "developer-portfolio-2daab",
+  storageBucket: "developer-portfolio-2daab.firebasestorage.app",
+  messagingSenderId: "1073543831740",
+  appId: "1:1073543831740:web:c8a47e00683a501d2bb0b9",
+  measurementId: "G-B1W3JW7XZP"
 };
 
 

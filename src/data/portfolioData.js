@@ -5,9 +5,9 @@ export const personalInfo = {
   name: "Kirusanth",
   title: "Full Stack Developer & Technology Enthusiast",
   description: "Passionate about creating innovative solutions and bringing ideas to life through code. I specialize in modern web technologies and love solving complex problems.",
-  location: "Your City, Country",
-  email: "kirusanth@example.com",
-  phone: "+1 (555) 123-4567",
+  location: "Jaffna, Sri Lanka",
+  email: "kirusanth200110@gmail.com",
+  phone: "+94 7688 65835",
   
   // Profile Image Configuration
   profileImage: {
@@ -22,7 +22,7 @@ export const personalInfo = {
     github: "https://github.com/kirusanth-08",
     linkedin: "https://linkedin.com/in/kirusanth-s",
     twitter: "https://twitter.com/kirusanth", // Optional
-    portfolio: "https://kirusanth.dev", // Optional
+    // portfolio: "https://kirusanth.dev", // Optional
   },
   
   // Resume file path (place your resume.pdf in the public folder)
@@ -107,20 +107,20 @@ export const skills = {
 
 export const experience = [
   {
-    title: "Full Stack Developer",
-    company: "Tech Solutions Inc.",
-    location: "San Francisco, CA",
-    period: "2023 - Present",
-    current: true,
+    title: "Software Engineering Intern",
+    company: "Keture",
+    location: "Mannar, Sri Lanka",
+    period: "2024.Aug - 2025.Feb",
+    current: false,
     description: "Developed and maintained web applications using React, Node.js, and MongoDB. Collaborated with cross-functional teams to deliver high-quality software solutions.",
-    technologies: ["React", "Node.js", "MongoDB", "AWS", "TypeScript", "Docker"],
+    technologies: ["Flutter", "Node.js", "MySQL", "AWS", "TypeScript", "Docker"],
     achievements: [
       "Increased application performance by 40% through code optimization and caching strategies",
       "Led a team of 3 junior developers and established coding standards",
       "Implemented CI/CD pipeline reducing deployment time by 60%",
       "Architected microservices infrastructure serving 100k+ daily users"
     ],
-    companyUrl: "https://techsolutions.com" // Optional
+    companyUrl: "https://keture.com/" // Optional
   },
   {
     title: "Frontend Developer",
@@ -159,60 +159,60 @@ export const experience = [
 export const certificates = [
   {
     id: 1,
-    title: "React Developer Certification",
-    issuer: "Meta",
-    date: "2023",
+    title: "Introduction to Machine Learning",
+    issuer: "Great Learning",
+    date: "July.2024",
     expiryDate: "2026", // Optional
     image: "/certificates/react-cert.png",
     description: "Comprehensive certification covering React fundamentals, hooks, advanced patterns, and performance optimization.",
-    credentialId: "ABC123456", // Optional
-    credentialUrl: "https://certificates.meta.com/abc123456", // Optional
-    skills: ["React", "JavaScript", "Redux", "Testing"]
+    credentialId: "WXMLJLMN", // Optional
+    credentialUrl: "https://www.mygreatlearning.com/certificate/WXMLJLMN", // Optional
+    skills: ["Machine Learning"]
   },
   {
     id: 2,
-    title: "JavaScript Algorithms and Data Structures",
-    issuer: "freeCodeCamp",
-    date: "2023",
+    title: "JavaScript Intermediate",
+    issuer: "Sololearn",
+    date: "Mar.2024",
     image: "/certificates/js-cert.png",
     description: "Certification demonstrating proficiency in JavaScript algorithms, data structures, and problem-solving techniques.",
-    credentialId: "DEF789012",
-    credentialUrl: "https://freecodecamp.org/certification/kirusanth/javascript-algorithms-and-data-structures",
-    skills: ["JavaScript", "Algorithms", "Data Structures", "Problem Solving"]
+    credentialId: "CC-PXMZXEER",
+    credentialUrl: "https://www.sololearn.com/en/certificates/CC-PXMZXEER",
+    skills: ["JavaScript", "OOP"]
   },
   {
     id: 3,
-    title: "AWS Cloud Practitioner",
-    issuer: "Amazon Web Services",
-    date: "2022",
+    title: "Microsoft Certified: Azure AI Fundamentals",
+    issuer: "Azure",
+    date: "Feb.2024",
     expiryDate: "2025",
     image: "/certificates/aws-cert.png",
     description: "Foundational certification covering AWS cloud services, architecture, security, and best practices.",
-    credentialId: "GHI345678",
-    credentialUrl: "https://aws.amazon.com/certification/verify/ghi345678",
-    skills: ["AWS", "Cloud Computing", "EC2", "S3", "Lambda"]
+    credentialId: "blvp5eed",
+    credentialUrl: "https://learn.microsoft.com/api/achievements/share/en-us/kirusanth-08/BLVP5EED?sharingId=5A242B180F08972D",
+    skills: ["AI"]
   },
-  {
-    id: 4,
-    title: "Full Stack Web Development",
-    issuer: "Coursera",
-    date: "2022",
-    image: "/certificates/fullstack-cert.png",
-    description: "Complete full-stack development course covering frontend and backend technologies, databases, and deployment.",
-    credentialId: "JKL901234",
-    credentialUrl: "https://coursera.org/verify/JKL901234",
-    skills: ["HTML", "CSS", "JavaScript", "Node.js", "MongoDB", "Express"]
-  },
-  {
-    id: 5,
-    title: "Advanced TypeScript",
-    issuer: "TypeScript Academy",
-    date: "2023",
-    image: "/certificates/typescript-cert.png",
-    description: "Advanced TypeScript certification covering complex types, generics, decorators, and enterprise patterns.",
-    credentialId: "MNO567890",
-    skills: ["TypeScript", "Advanced Types", "Generics", "Decorators"]
-  }
+  // {
+  //   id: 4,
+  //   title: "Full Stack Web Development",
+  //   issuer: "Coursera",
+  //   date: "2022",
+  //   image: "/certificates/fullstack-cert.png",
+  //   description: "Complete full-stack development course covering frontend and backend technologies, databases, and deployment.",
+  //   credentialId: "JKL901234",
+  //   credentialUrl: "https://coursera.org/verify/JKL901234",
+  //   skills: ["HTML", "CSS", "JavaScript", "Node.js", "MongoDB", "Express"]
+  // },
+  // {
+  //   id: 5,
+  //   title: "Advanced TypeScript",
+  //   issuer: "TypeScript Academy",
+  //   date: "2023",
+  //   image: "/certificates/typescript-cert.png",
+  //   description: "Advanced TypeScript certification covering complex types, generics, decorators, and enterprise patterns.",
+  //   credentialId: "MNO567890",
+  //   skills: ["TypeScript", "Advanced Types", "Generics", "Decorators"]
+  // }
 ];
 
 export const projects = [
@@ -259,20 +259,20 @@ export const contactInfo = {
   methods: [
     {
       type: "email",
-      value: "kirusanth@example.com",
-      display: "kirusanth@example.com",
+      value: "kirusanth200110@gmail.com",
+      display: "kirusanth200110@gmail.com",
       icon: "Mail"
     },
     {
       type: "phone",
-      value: "+1 (555) 123-4567",
-      display: "+1 (555) 123-4567",
+      value: "+94 7688 65835",
+      display: "+94 7688 65835",
       icon: "Phone"
     },
     {
       type: "location",
-      value: "Your City, Country",
-      display: "Your City, Country",
+      value: "Jaffna, Sri Lanka",
+      display: "Jaffna, Sri Lanka",
       icon: "MapPin"
     }
   ],

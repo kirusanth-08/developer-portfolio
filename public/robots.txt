@@ -1,3 +1,10 @@
-# https://www.robotstxt.org/robotstxt.html
+# Kirusanth Portfolio Website - Robots.txt
+# https://kirusanth-08.github.io/developer-portfolio/
+
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /api/
+Disallow: /private/
+
+# Add your sitemap location
+Sitemap: https://kirusanth-08.github.io/developer-portfolio/sitemap.xml

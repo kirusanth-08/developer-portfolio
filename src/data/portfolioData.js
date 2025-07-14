@@ -11,23 +11,23 @@ export const personalInfo = {
   
   // Profile Image Configuration
   profileImage: {
-    enabled: true, // Set to false to hide profile image
-    src: "/profile1.jpg", // Path to your profile image
+    enabled: true,
+    src: "/profile.jpg",
     alt: "Kirusanth Profile Picture",
-    fallbackText: "K", // Fallback letter if image fails to load
+    fallbackText: "K",
   },
   
   // Social Media Links
   social: {
     github: "https://github.com/kirusanth-08",
     linkedin: "https://linkedin.com/in/kirusanth-s",
-    twitter: "https://twitter.com/kirusanth", // Optional
-    // portfolio: "https://kirusanth.dev", // Optional
+    twitter: "https://twitter.com/Kirusant08",
+    // portfolio: "https://kirusanth.dev",
   },
   
   // Resume file path (place your resume.pdf in the public folder)
   resumePath: "/resume.pdf",
-  resumeFileName: "Kirusanth_Resume.pdf"
+  resumeFileName: "Kirusanth_sathananthan_resume.pdf"
 };
 
 export const aboutMe = {
@@ -120,39 +120,7 @@ export const experience = [
       "Implemented CI/CD pipeline reducing deployment time by 60%",
       "Architected microservices infrastructure serving 100k+ daily users"
     ],
-    companyUrl: "https://keture.com/" // Optional
-  },
-  {
-    title: "Frontend Developer",
-    company: "Digital Agency",
-    location: "New York, NY",
-    period: "2022 - 2023",
-    current: false,
-    description: "Created responsive web interfaces and improved user experience. Worked closely with designers to implement pixel-perfect designs.",
-    technologies: ["React", "JavaScript", "CSS", "Git", "Figma", "Sass"],
-    achievements: [
-      "Improved user engagement by 25% through UX/UI enhancements",
-      "Reduced bounce rate by 30% with optimized page load times",
-      "Mentored 2 intern developers and conducted code reviews",
-      "Developed reusable component library used across 5+ projects"
-    ],
-    companyUrl: "https://digitalagency.com" // Optional
-  },
-  {
-    title: "Junior Developer",
-    company: "StartUp Solutions",
-    location: "Austin, TX",
-    period: "2021 - 2022",
-    current: false,
-    description: "Assisted in developing web applications and learned modern development practices. Contributed to both frontend and backend development.",
-    technologies: ["HTML", "CSS", "JavaScript", "Python", "Flask", "SQLite"],
-    achievements: [
-      "Completed 15+ feature implementations ahead of schedule",
-      "Reduced bug reports by 20% through thorough testing",
-      "Earned Employee of the Month award twice",
-      "Contributed to open-source projects used by the company"
-    ],
-    companyUrl: "https://startupsolutions.com" // Optional
+    companyUrl: "https://keture.com/"
   }
 ];
 
@@ -162,11 +130,11 @@ export const certificates = [
     title: "Introduction to Machine Learning",
     issuer: "Great Learning",
     date: "July.2024",
-    expiryDate: "2026", // Optional
+    expiryDate: "2026",
     image: "/certificates/react-cert.png",
     description: "Comprehensive certification covering React fundamentals, hooks, advanced patterns, and performance optimization.",
-    credentialId: "WXMLJLMN", // Optional
-    credentialUrl: "https://www.mygreatlearning.com/certificate/WXMLJLMN", // Optional
+    credentialId: "WXMLJLMN",
+    credentialUrl: "https://www.mygreatlearning.com/certificate/WXMLJLMN",
     skills: ["Machine Learning"]
   },
   {
@@ -255,7 +223,6 @@ export const contactInfo = {
   title: "Let's Connect",
   subtitle: "I'm always interested in new opportunities and collaborations. Feel free to reach out if you'd like to discuss a project or just say hello!",
   
-  // Contact methods
   methods: [
     {
       type: "email",
@@ -277,21 +244,34 @@ export const contactInfo = {
     }
   ],
   
-  // Form configuration
   form: {
     enabled: true,
-    action: "", // Add your form action URL here (e.g., Formspree, Netlify Forms)
+    action: "",
     method: "POST"
   }
 };
 
+// MOVE siteConfig BEFORE seoConfig
 export const siteConfig = {
   // Site metadata
-  title: "Kirusanth - Full Stack Developer",
-  description: "Portfolio of Kirusanth, a passionate Full Stack Developer specializing in modern web technologies.",
-  keywords: ["Kirusanth", "Full Stack Developer", "React", "Node.js", "Portfolio"],
+  title: "Kirusanth - Full Stack Developer | React & Node.js Expert",
+  description: "Full Stack Developer specializing in React, Node.js, and modern web technologies. View my portfolio, projects, and experience in software development.",
+  keywords: [
+    "Kirusanth", 
+    "Full Stack Developer", 
+    "React Developer", 
+    "Node.js Developer", 
+    "JavaScript", 
+    "TypeScript", 
+    "Web Development", 
+    "Software Engineer", 
+    "Portfolio", 
+    "Sri Lanka Developer",
+    "Frontend Developer",
+    "Backend Developer"
+  ],
   author: "Kirusanth",
-  siteUrl: "https://kirusanth.dev",
+  siteUrl: "https://kirusanth-08.github.io/developer-portfolio/",
   
   // Navigation items
   navigation: [
@@ -300,33 +280,33 @@ export const siteConfig = {
     { id: 'skills', label: 'Skills' },
     { id: 'experience', label: 'Experience' },
     { id: 'certificates', label: 'Certificates' },
-    { id: 'projects', label: 'Projects' }, // Optional projects section
+    { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Contact' },
   ],
   
   // Theme configuration
   theme: {
-    defaultTheme: 'light', // 'light' or 'dark'
-    enableSystemTheme: true // Allow system preference detection
+    defaultTheme: 'light',
+    enableSystemTheme: true
   },
   
   // Features to enable/disable
   features: {
-    showProjects: false, // Set to true if you want to include projects section
-    showBlog: false, // Future feature
+    showProjects: false,
+    showBlog: false,
     enableAnimations: true,
-    enableParticles: true, // Background particles effect
-    enableMusicPlayer: false, // Future feature
+    enableParticles: true,
+    enableMusicPlayer: false,
   },
   
   // Analytics (optional)
   analytics: {
-    googleAnalyticsId: "", // Your GA4 ID
-    hotjarId: "", // Your Hotjar ID
+    googleAnalyticsId: "",
+    hotjarId: "",
   }
 };
 
-// SEO and meta tags
+// NOW seoConfig can reference siteConfig
 export const seoConfig = {
   openGraph: {
     type: 'website',
@@ -336,7 +316,7 @@ export const seoConfig = {
     description: siteConfig.description,
     images: [
       {
-        url: `${siteConfig.siteUrl}/og-image.png`,
+        url: `${siteConfig.siteUrl}og-image.png`,
         width: 1200,
         height: 630,
         alt: siteConfig.title,
@@ -344,10 +324,16 @@ export const seoConfig = {
     ],
   },
   twitter: {
-    handle: '@kirusanth', // Your Twitter handle
-    site: '@kirusanth',
+    handle: '@Kirusant08',
+    site: '@Kirusant08',
     cardType: 'summary_large_image',
   },
+  additionalMetaTags: [
+    {
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1.0'
+    }
+  ]
 };
 
 // Export all data

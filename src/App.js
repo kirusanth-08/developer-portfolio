@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { siteConfig } from './data/portfolioData';
+import SEO from './components/SEO';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -17,20 +19,22 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <ThemeProvider>
-      <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
-        <AnimatePresence>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Header />
-            <Hero />
-            <About />
-            <Skills />
-            <Experience />
-            <Certificates />
+    <HelmetProvider>
+      <ThemeProvider>
+        <SEO />
+        <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+          <AnimatePresence>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Header />
+              <Hero />
+              <About />
+              <Skills />
+              <Experience />
+              <Certificates />
             
             {/* Conditionally render Projects section */}
             {/* {siteConfig.features.showProjects && Projects && (
@@ -39,12 +43,13 @@ function App() {
               </React.Suspense>
             )} */}
             
-            <Contact />
-            <Footer />
-          </motion.div>
-        </AnimatePresence>
-      </div>
-    </ThemeProvider>
+              <Contact />
+              <Footer />
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </ThemeProvider>
+    </HelmetProvider>
   );
 }
 

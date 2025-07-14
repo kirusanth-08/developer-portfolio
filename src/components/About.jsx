@@ -69,7 +69,7 @@ const About = () => {
                 {aboutMe.techStack.map((tech, index) => (
                   <motion.span
                     key={tech}
-                    className="px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 rounded-full text-sm font-medium"
+                    className="px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 rounded-full text-sm font-medium select-none"
                     whileHover={{ scale: 1.05 }}
                     transition={{ delay: index * 0.1 }}
                   >

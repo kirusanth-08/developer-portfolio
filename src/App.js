@@ -33,11 +33,11 @@ function App() {
             <Certificates />
             
             {/* Conditionally render Projects section */}
-            {siteConfig.features.showProjects && Projects && (
+            {/* {siteConfig.features.showProjects && Projects && (
               <React.Suspense fallback={<div>Loading...</div>}>
                 <Projects />
               </React.Suspense>
-            )}
+            )} */}
             
             <Contact />
             <Footer />

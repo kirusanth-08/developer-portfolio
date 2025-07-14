@@ -62,19 +62,19 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'kirusanth@example.com',
-      href: 'mailto:kirusanth@example.com'
+      value: 'kirusanth200110@gmail.com',
+      href: 'mailto:kirusanth200110@gmail.com'
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567'
+      value: '+94 (76) 886-5835',
+      href: 'tel:+94768865835'
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Jaffna, Sri Lanka',
       href: 'https://maps.google.com/?q=San Francisco, CA'
     }
   ];

@@ -42,10 +42,10 @@ export const aboutMe = {
   
   // Statistics for about section
   stats: [
-    { number: '2+', label: 'Years Experience', icon: 'Target' },
-    { number: '15+', label: 'Projects Completed', icon: 'Code' },
-    { number: '5+', label: 'Technologies Mastered', icon: 'Lightbulb' },
-    { number: '10+', label: 'Happy Clients', icon: 'Users' },
+    { number: '1+', label: 'Years Experience', icon: 'Target' },
+    { number: '5+', label: 'Projects Completed', icon: 'Code' },
+    // { number: '5+', label: 'Technologies Mastered', icon: 'Lightbulb' },
+    // { number: '10+', label: 'Happy Clients', icon: 'Users' },
   ]
 };
 
@@ -71,9 +71,9 @@ export const skills = {
         { name: "Node.js", level: 85 },
         { name: "Python", level: 80 },
         { name: "Express.js", level: 85 },
-        { name: "Django", level: 75 },
+        // { name: "Django", level: 75 },
         { name: "REST APIs", level: 90 },
-        { name: "GraphQL", level: 70 },
+        // { name: "GraphQL", level: 70 },
         { name: "Microservices", level: 75 }
       ]
     },

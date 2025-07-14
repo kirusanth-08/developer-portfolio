@@ -1,49 +1,61 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { CalendarDays, MapPin, ExternalLink } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { CalendarDays, MapPin, ExternalLink } from "lucide-react";
 
 const Experience = () => {
   const experiences = [
     {
-      title: "Full Stack Developer",
-      company: "Tech Solutions Inc.",
-      location: "San Francisco, CA",
-      period: "2023 - Present",
-      description: "Developed and maintained web applications using React, Node.js, and MongoDB. Collaborated with cross-functional teams to deliver high-quality software solutions.",
-      technologies: ["React", "Node.js", "MongoDB", "AWS"],
+      title: "Frontend Developer",
+      company: "Un4cus (Pvt) Ltd.",
+      logo: "https://un4cus.com/images/logo.png",
+      link: "https://un4cus.com",
+      location: "Kandy, SriLanka",
+      period: "May, 2025 - Present",
+      description:
+        "Developed and maintained web applications using React, Node.js, and MongoDB. Collaborated with cross-functional teams to deliver high-quality software solutions.",
+      technologies: ["React", "Springboot", "MySql"],
       achievements: [
         "Increased application performance by 40%",
         "Led a team of 3 junior developers",
-        "Implemented CI/CD pipeline reducing deployment time by 60%"
-      ]
+        "Implemented CI/CD pipeline reducing deployment time by 60%",
+      ],
     },
+    // {
+    //   title: "Frontend Developer",
+    //   company: "Digital Agency",
+    //   location: "New York, NY",
+    //   period: "2022 - 2023",
+    //   description: "Created responsive web interfaces and improved user experience. Worked closely with designers to implement pixel-perfect designs.",
+    //   technologies: ["React", "JavaScript", "CSS", "Git"],
+    //   achievements: [
+    //     "Improved user engagement by 25%",
+    //     "Reduced bounce rate by 30%",
+    //     "Mentored 2 intern developers"
+    //   ]
+    // },
     {
-      title: "Frontend Developer",
-      company: "Digital Agency",
-      location: "New York, NY",
-      period: "2022 - 2023",
-      description: "Created responsive web interfaces and improved user experience. Worked closely with designers to implement pixel-perfect designs.",
-      technologies: ["React", "JavaScript", "CSS", "Git"],
-      achievements: [
-        "Improved user engagement by 25%",
-        "Reduced bounce rate by 30%",
-        "Mentored 2 intern developers"
-      ]
-    },
-    {
-      title: "Junior Developer",
-      company: "StartUp Solutions",
-      location: "Austin, TX",
-      period: "2021 - 2022",
-      description: "Assisted in developing web applications and learned modern development practices. Contributed to both frontend and backend development.",
-      technologies: ["HTML", "CSS", "JavaScript", "Python"],
+      title: "Software Engineer Intern",
+      company: "Keture (Pvt) Ltd.",
+      logo: "https://keture.com/static/media/logo-sml.48d7898f150af0ab020c.png",
+      link: "https://keture.com",
+      location: "Mannar, SriLanka",
+      period: "Aug, 2024 - Feb, 2025 (6 months)",
+      description:
+        "Assisted in developing mobile applications and learned modern development practices using nodejs. Contributed to both frontend and backend development. Gained hands-on experience in DevOps.",
+      technologies: [
+        "Flutter",
+        "Node.js",
+        "MySql",
+        "Prisma ORM",
+        "Tailwind CSS",
+      ],
       achievements: [
         "Completed 15+ feature implementations",
         "Reduced bug reports by 20%",
-        "Earned Employee of the Month award"
-      ]
-    }
+        "Earned Employee of the Month award",
+      ],
+    },
   ];
 
   const containerVariants = {
@@ -51,9 +63,9 @@ const Experience = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3
-      }
-    }
+        staggerChildren: 0.3,
+      },
+    },
   };
 
   const itemVariants = {
@@ -63,9 +75,9 @@ const Experience = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
@@ -116,8 +128,23 @@ const Experience = () => {
                                   {exp.title}
                                 </CardTitle>
                                 <div className="flex items-center gap-2 text-lg font-semibold text-muted-foreground mt-1">
-                                  <ExternalLink className="h-4 w-4" />
+                                  <img 
+                                    className="w-6 h-6 rounded-md object-contain bg-white p-1 shadow-sm" 
+                                    src={exp.logo} 
+                                    alt={`${exp.company} logo`}
+                                  />
                                   {exp.company}
+                                  <button
+                                    className="p-2 hover:bg-slate-800 rounded-full"
+                                    onClick={() => {
+                                      if (exp.link) {
+                                        window.open(exp.link, "_blank");
+                                      }
+                                    }}
+                                    disabled={!exp.link}
+                                  >
+                                    <ExternalLink className="h-4 w-4" />
+                                  </button>
                                 </div>
                               </div>
                               <div className="flex flex-col md:items-end gap-2">
@@ -139,7 +166,9 @@ const Experience = () => {
 
                             {/* Key Achievements */}
                             <div>
-                              <h4 className="font-semibold mb-3 text-foreground">Key Achievements:</h4>
+                              <h4 className="font-semibold mb-3 text-foreground">
+                                Key Achievements:
+                              </h4>
                               <ul className="space-y-2">
                                 {exp.achievements.map((achievement, i) => (
                                   <motion.li
@@ -158,12 +187,14 @@ const Experience = () => {
 
                             {/* Technologies */}
                             <div>
-                              <h4 className="font-semibold mb-3 text-foreground">Technologies Used:</h4>
+                              <h4 className="font-semibold mb-3 text-foreground">
+                                Technologies Used:
+                              </h4>
                               <div className="flex flex-wrap gap-2">
                                 {exp.technologies.map((tech, i) => (
                                   <motion.span
                                     key={tech}
-                                    className="px-3 py-1 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 rounded-full text-xs font-medium"
+                                    className="px-3 py-1 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 rounded-full text-xs font-medium select-none"
                                     whileHover={{ scale: 1.05 }}
                                     transition={{ delay: i * 0.05 }}
                                   >
